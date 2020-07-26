@@ -1,0 +1,8 @@
+{
+  id: blog_post.id,
+  post_title: blog_post.post_title,
+  post_content: blog_post.post_content,
+  post_image_url: blog_post.post_image_url,
+  created_at: blog_post.created_at,
+  updated_at: blog_post.updated_at
+}

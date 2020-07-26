@@ -1,0 +1,3 @@
+@portfolio_projects.map do |portfolio_project|
+  render partial: "portfolio_project.json.jb", locals: {portfolio_project: portfolio_project}
+end
