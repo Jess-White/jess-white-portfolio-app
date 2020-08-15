@@ -7,7 +7,15 @@ class Api::PortfolioProjectsController < ApplicationController
   end
 
   def create
-    @portfolio_project = PortfolioProject.new(portfolio_project_params)
+    @portfolio_project = PortfolioProject.new(
+      project_title: params[:project_title],
+      project_summary: params[:project_summary],
+      language: params[:language],
+      project_image_url: params[:project_image_url],
+      project_video_link: params[:project_video_link],
+      project_github_link: params[:project_github_link],
+      project_deploy_link: params[:project_deploy_link]
+      )
     if @portfolio_project.save
       render "show.json.jb"
     else
@@ -24,6 +32,7 @@ class Api::PortfolioProjectsController < ApplicationController
     @portfolio_project = PortfolioProject.find(params[:id])
     @portfolio_project.project_title = params[:project_title] || @portfolio_project.project_title
     @portfolio_project.project_summary = params[:project_summary] || @portfolio_project.project_summary
+    @portfolio_project.language = params[:language] || @portfolio_project.language
     @portfolio_project.project_image_url = params[:project_image_url] || @portfolio_project.project_image_url
     @portfolio_project.project_video_link = params[:project_video_link] || @portfolio_project.project_video_link
     @portfolio_project.project_github_link = params[:project_github_link] || @portfolio_project.project_github_link

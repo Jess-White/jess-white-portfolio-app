@@ -12,6 +12,14 @@ Rails.application.routes.draw do
     get "/portfolio_projects/:id" => "portfolio_projects#show"
     patch "/portfolio_projects/:id" => "portfolio_projects#update"
     delete "/portfolio_projects/:id" => "portfolio_projects#destroy"
+
+    get "/tags" => "tags#index"
+    post "/tags" => "tags#create"
+    get "/tags/:id" => "tags#show"
+
+    post "/users" => "users#create"
+
+    post "/sessions" => "sessions#create"
   end
 
 end

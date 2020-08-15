@@ -2,6 +2,7 @@
   id: portfolio_project.id,
   project_title: portfolio_project.project_title,
   project_summary: portfolio_project.project_summary,
+  language: portfolio_project.language,
   project_image_url: portfolio_project.project_image_url,
   project_video_link: portfolio_project.project_video_link,
   project_github_link: portfolio_project.project_github_link,

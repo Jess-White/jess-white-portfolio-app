@@ -1,1 +1,7 @@
-render partial: "blog_post.json.jb", locals: { blog_post: @blog_post }
+blog_post_hash = render partial: "blog_post.json.jb", locals: { blog_post: @blog_post }
+
+blog_post_hash[:tags] = @blog_post.taggings.map do |tagging|
+  tagging.tag.name
+end
+
+blog_post_hash
